@@ -1,19 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    123
+    <div>
+      {{ this.$store.state.a }}
+    </div>
+    <div>
+      {{ this.$store.getters.getNum }}
+    </div>
+
+    <button @click="add">测试commit</button>
+    <br />
+    <br />
+    <button @click="asyncAdd">异步+2</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  mounted() {},
+  methods: {
+    add() {
+      this.$store.commit("change", 10);
+    },
+
+    asyncAdd() {
+      this.$store.dispatch("asyncIncre", 200);
+    },
+  },
+};
 </script>
 
 <style>
