@@ -35,6 +35,14 @@ class Store {
                 actions[item](this, args)
             }
         })
+
+
+        const store = this
+        const { commit } = this
+        this.commit = function (type, payload) {
+            // this指向绑定住了
+            commit.call(store, type, payload)
+        }
     }
 
     get state() {
@@ -46,7 +54,12 @@ class Store {
     }
 
 
-    commit = (type, payload) => {
+    // commit = (type, payload) => {
+    //     this.mutations[type](payload)
+    // }
+
+    commit(type, payload) {
+        console.log('==>Get this', this);
         this.mutations[type](payload)
     }
 }
