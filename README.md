@@ -1,19 +1,17 @@
 # how-to-build-my-vuex
 
-## Project setup
-```
+## 安装依赖
+```bash
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
+## 启动项目
+```bash
 npm run serve
 ```
 
-### Compiles and minifies for production
+## 主要文件
+```js
+// 自定义vuex文件
+src/store/myVuex.js 
 ```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
